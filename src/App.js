@@ -20,7 +20,7 @@ export const WeatherIcons = {
 };
 
 function App() {
-  const [city,setCity] = useState("ballia");
+  const [city,setCity] = useState();
   const [weather,setWeather] = useState();
   useEffect(()=>{
     if(city){
@@ -28,7 +28,6 @@ function App() {
       fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_API_KEY}`)
       .then(res=>res.json())
       .then(data=>{
-        console.log("city is ",city);
         setWeather(data);
       })
     }

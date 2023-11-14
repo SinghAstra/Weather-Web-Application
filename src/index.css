@@ -77,13 +77,19 @@ body {
 }
 .weatherInfoComponent{
   display: flex;
-  background-color: yellow;
   align-items: center;
+  width: fit-content;
+  margin: 16px;
+}
+.weatherInfoComponent h5,p{
+  margin: 4px;
 }
 .infoValue{
-  background-color: purple;
+ text-align: start;
+}
+
+.weather-info{
   display: flex;
-  align-items: center;
-  justify-content: start;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
