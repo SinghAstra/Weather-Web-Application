@@ -63,3 +63,7 @@ body {
   cursor: pointer;
   background-color: black;
 }
+.weather-container{
+  text-align: center;
+  background-color: purple;
+}

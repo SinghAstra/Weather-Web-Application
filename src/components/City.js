@@ -7,7 +7,7 @@ const City = ({setCity,city}) => {
   }
   return (
     <div className='city-container'>
-      <img src="perfect-day.svg" alt='app-icon' className='city-image'/>
+      <img src="icons/perfect-day.svg" alt='app-icon' className='city-image'/>
       <h4>Find Weather in your city.</h4>
       <form onSubmit={handleSubmit}>
         <input type='text' placeholder='City' name='city'/>
