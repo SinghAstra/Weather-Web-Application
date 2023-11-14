@@ -65,5 +65,25 @@ body {
 }
 .weather-container{
   text-align: center;
+}
+.weatherIcon{
+  width: 200px;
+  height: 200px;
+}
+.infoIcon{
+  width: 36px;
+  height: 36px;
+  margin: 0px 5px;
+}
+.weatherInfoComponent{
+  display: flex;
+  background-color: yellow;
+  align-items: center;
+}
+.infoValue{
   background-color: purple;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
 }

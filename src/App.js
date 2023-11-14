@@ -20,7 +20,7 @@ export const WeatherIcons = {
 };
 
 function App() {
-  const [city,setCity] = useState();
+  const [city,setCity] = useState("ballia");
   const [weather,setWeather] = useState();
   useEffect(()=>{
     if(city){
