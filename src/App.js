@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Weather from "./components/Weather";
+import City from "./components/City";
+
 
 function App() {
+  const [city,setCity] = useState();
+  const [weather,setWeather] = useState();
+  const fetchWeather = () =>{
+    fetch("https://api.openweathermap.org/data/2.5/weather?q=ballia&appid=dbc34bb2e675179a94cde79e7fbab06d")
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(data);
+    })
+  }
+  fetchWeather();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1 className="app-label">CloudCast</h1>
+      {city&&weather?<Weather/>:<City setCity={setCity} fetchWeather={fetchWeather}/>}
     </div>
   );
 }
