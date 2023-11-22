@@ -26,7 +26,7 @@ const Home = () => {
           value={cityName}
           onChange={(e) => setCityName(e.target.value)}
           placeholder='Enter City Name:'
-          className='px-12 rounded-lg focus:outline-none hover:cursor-pointer h-14 shadow-md shadow-slate-800'
+          className='px-12 rounded-lg focus:outline-none hover:cursor-pointer h-14 '
         />
         <FontAwesomeIcon icon={faCircleXmark} className='absolute top-4 right-4 text-sky-300 cursor-pointer hover:text-sky-500' onClick={handleResetCityName}/>
       </form>
