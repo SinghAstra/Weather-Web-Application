@@ -3,11 +3,12 @@ import { WeatherContext } from '../Context';
 import { Navigate, useNavigate } from 'react-router-dom';
 
 const Home = () => {
-  const {cityName,setCityName,fetchWeather} = useContext(WeatherContext);
+  const {cityName,setCityName,fetchCurrentWeather,fetchWeatherForecast} = useContext(WeatherContext);
   const navigate = useNavigate();
   const handleFormSubmit = (e) =>{
     e.preventDefault();
-    fetchWeather();
+    fetchCurrentWeather();
+    fetchWeatherForecast();
     navigate('/weather');
   }
   return (
