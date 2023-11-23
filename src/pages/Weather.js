@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { WeatherContext } from '../Context'
-import {FiWind} from 'react-icons/fi'
+import { FiWind } from 'react-icons/fi'
 import { FaDroplet } from "react-icons/fa6";
 
 const Weather = () => {
@@ -22,30 +22,57 @@ const Weather = () => {
   // }
   const forecast = [
     {
-      "day":"Mon",
-      "temp":32,
-      "desc":"Clear"
+      "day": "Mon",
+      "temp": 32,
+      "desc": "Clear"
     },
     {
-      "day":"Tue",
-      "temp":32,
-      "desc":"Clear"
+      "day": "Tue",
+      "temp": 32,
+      "desc": "Clear"
     },
     {
-      "day":"Wed",
-      "temp":32,
-      "desc":"Clear"
+      "day": "Wed",
+      "temp": 32,
+      "desc": "Clear"
     },
     {
-      "day":"Thu",
-      "temp":32,
-      "desc":"Clear"
+      "day": "Thu",
+      "temp": 32,
+      "desc": "Clear"
     },
     {
-      "day":"Fri",
-      "temp":32,
-      "desc":"Clear"
+      "day": "Fri",
+      "temp": 32,
+      "desc": "Clear"
     }
+  ]
+  const hourlyForecast = [
+    {
+      "time": "1 PM",
+      "temp": 32,
+      "desc": "Clear"
+    },
+    {
+      "time": "2 PM",
+      "temp": 32,
+      "desc": "Clear"
+    },
+    {
+      "time": "3 PM",
+      "temp": 32,
+      "desc": "Clear"
+    },
+    {
+      "time": "1 PM",
+      "temp": 32,
+      "desc": "Clear"
+    },
+    {
+      "time": "4 PM",
+      "temp": 32,
+      "desc": "Clear"
+    },
   ]
   return (
     <div className='bg-white sm:bg-purple-400 md:bg-pink-500 lg:bg-blue-500 xl:bg-yellow-400 flex flex-col lg:flex-row'>
@@ -65,29 +92,52 @@ const Weather = () => {
             <p className='text-4xl font-extrabold'>Clear Sky</p>
           </div>
           <div className='bg-lime-400 flex flex-col justify-center align-middle'>
-            <p className='text-2xl flex font-bold'><FiWind/> 25 m/s</p>
-            <p className='text-2xl flex font-bold'><FaDroplet/> 90 %</p>
+            <p className='text-2xl flex font-bold'><FiWind /> 25 m/s</p>
+            <p className='text-2xl flex font-bold'><FaDroplet /> 90 %</p>
           </div>
         </div>
         <div>
-          <div className='flex justify-center p-6 flex-wrap bg-sky-400'>  
-          {forecast.map(day=>{
-            return <div className='flex flex-col bg-cyan-400 justify-between m-2 items-center rounded border-2 p-2'>
-              <p className='text-2xl'>{day.day}</p>
-              <p className='text-4xl font-semibold'>{day.temp}°</p>
-              <p className='text-2xl font-light'>{day.desc}</p>
-            </div>
-          })}
+          <div className='flex justify-center p-6 flex-wrap bg-sky-400'>
+            {forecast.map(day => {
+              return <div className='flex flex-col bg-cyan-400 justify-between m-2 items-center rounded border-2 p-2'>
+                <p className='text-2xl'>{day.day}</p>
+                <p className='text-4xl font-semibold'>{day.temp}°</p>
+                <p className='text-2xl font-light'>{day.desc}</p>
+              </div>
+            })}
           </div>
         </div>
       </div>
       <div className='min-h-screen'>
-        <p>Jhansi,IN</p>
-        <p>Clear Sky</p>
-        <p>Wind Speed : 25m/s</p>
-        <p>Humidity:30%</p>
-        <p>Sunrise : 05:00 AM</p>
-        <p>Sunset : 07:00 PM</p>
+        <div className='flex flex-col justify-center items-center text-3xl font-bold p-3 bg-violet-400'>
+          <p>Good Morning</p>
+          <p>12:27 PM</p>
+        </div>
+        <div className='lg:flex justify-center bg-purple-400 p-3 hidden'>
+          <div className='bg-fuchsia-400 flex items-center'>
+            <p className='text-3xl'>20°</p>
+          </div>
+          <div className='flex flex-col bg-pink-400'>
+            <p className='flex'><FiWind/> 25mph</p>
+            <p className='flex'><FaDroplet/> 90%</p>
+          </div>
+        </div>
+        <div className='lg:flex flex-col items-center bg-rose-400 hidden'>
+          <p>Feels like 19°</p>
+          <p>Cloudy</p>
+        </div>
+        <div className='flex flex-col items-center p-3'>
+          <h3 className='text-3xl font-bold m-2'>Hourly Forecast</h3>
+          <div className='flex justify-center flex-wrap'>
+          {hourlyForecast.map(hour => {
+              return <div className='flex flex-col justify-between m-2 items-center rounded border-2 p-2'>
+                <p className='text-2xl'>{hour.time}</p>
+                <p className='text-4xl font-semibold'>{hour.temp}°</p>
+                <p className='text-2xl font-light'>{hour.desc}</p>
+              </div>
+            })}
+          </div>
+        </div>
       </div>
       {/* <h3>5 day Weather Forecast</h3>
       <ul>
