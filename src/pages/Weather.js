@@ -1,5 +1,7 @@
 import React, { useContext } from 'react'
 import { WeatherContext } from '../Context'
+import {FiWind} from 'react-icons/fi'
+import { FaDroplet } from "react-icons/fa6";
 
 const Weather = () => {
   // const { weather,forecast } = useContext(WeatherContext);
@@ -18,11 +20,66 @@ const Weather = () => {
   //   const formattedTime = `${formattedHours}:${formattedMinutes} ${period}`;
   //   return formattedTime;
   // }
+  const forecast = [
+    {
+      "day":"Mon",
+      "temp":32,
+      "desc":"Clear"
+    },
+    {
+      "day":"Tue",
+      "temp":32,
+      "desc":"Clear"
+    },
+    {
+      "day":"Wed",
+      "temp":32,
+      "desc":"Clear"
+    },
+    {
+      "day":"Thu",
+      "temp":32,
+      "desc":"Clear"
+    },
+    {
+      "day":"Fri",
+      "temp":32,
+      "desc":"Clear"
+    }
+  ]
   return (
     <div className='bg-white sm:bg-purple-400 md:bg-pink-500 lg:bg-blue-500 xl:bg-yellow-400 flex flex-col lg:flex-row'>
       <div className='bg-red-400 lg:w-9/12 w-screen min-h-screen'>
-        <h3>Current Weather Information</h3>
-        <p>Temperature : {20}°C</p>
+        <div className='flex justify-between font-extrabold p-3 text-2xl bg-indigo-400'>
+          <div>
+            <p>Jhansi</p>
+            <p>India</p>
+          </div>
+          <div>
+            <p>21-04-23</p>
+          </div>
+        </div>
+        <div className='flex justify-center p-6 bg-teal-400 flex-wrap'>
+          <div className='bg-green-400 flex flex-col justify-center items-center'>
+            <p className='text-9xl font-extrabold'>20°</p>
+            <p className='text-4xl font-extrabold'>Clear Sky</p>
+          </div>
+          <div className='bg-lime-400 flex flex-col justify-center align-middle'>
+            <p className='text-2xl flex font-bold'><FiWind/> 25 m/s</p>
+            <p className='text-2xl flex font-bold'><FaDroplet/> 90 %</p>
+          </div>
+        </div>
+        <div>
+          <div className='flex justify-center p-6 flex-wrap bg-sky-400'>  
+          {forecast.map(day=>{
+            return <div className='flex flex-col bg-cyan-400 justify-between m-2 items-center rounded border-2 p-2'>
+              <p className='text-2xl'>{day.day}</p>
+              <p className='text-4xl font-semibold'>{day.temp}°</p>
+              <p className='text-2xl font-light'>{day.desc}</p>
+            </div>
+          })}
+          </div>
+        </div>
       </div>
       <div className='min-h-screen'>
         <p>Jhansi,IN</p>
