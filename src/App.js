@@ -1,4 +1,4 @@
-import { WeatherProvider } from './Context';
+import { WeatherProvider } from './WeatherContext';
 import Home from './pages/Home';
 import Weather from './pages/Weather';
 import { Route, Routes } from "react-router-dom";
@@ -10,7 +10,7 @@ const App = () => {
     <WeatherProvider>
       <div>
         <Routes>
-          <Route path="/" element={<Weather />} />
+          <Route path="/" element={<Home />} />
           <Route path="/weather" element={<Weather />} />
         </Routes>
       </div>
